@@ -6,6 +6,13 @@
          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
   <bean name="/listele.html" class="com.example.controller.urun.UrunListeleController" />
+  <bean name="/urunler.html" class="com.example.controller.urun.UrunController" />
+<bean name="/urunEkle.html" class="com.example.controller.urun.UrunController" />
+<bean name="/urunKaydet.html" class="com.example.controller.urun.UrunController" />
+<bean name="/urunDuzenle.html" class="com.example.controller.urun.UrunController" />
+<bean name="/urunGuncelle.html" class="com.example.controller.urun.UrunController" />
+<bean name="/urunSil.html" class="com.example.controller.urun.UrunController" />
+  
 
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
     <property name="prefix" value="/" />

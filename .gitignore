@@ -1,0 +1,65 @@
+# Java derleme çıktıları
+*.class
+*.war
+*.jar
+*.log
+
+# Derleyici çıktısı klasörleri
+/target/
+/build/
+
+# Maven
+.mvn/
+!**/src/main/**/.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+
+# Gradle
+.gradle/
+build/
+!gradle-wrapper.jar
+**/gradle-wrapper.properties
+**/gradle-wrapper.jar
+
+# IDE dosyaları
+*.iml
+.idea/
+*.ipr
+*.iws
+*.bak
+*.swp
+*~
+*.orig
+.DS_Store
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+# VSCode
+.vscode/
+
+# OS'ye özel dosyalar
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Test raporları ve geçici dosyalar
+/test-output/
+*.tmp
+*.bak
+*.log
+
+# Giriş bilgisi dosyaları (örnek)
+*.env
+.env.*
+*.keystore
+
+# Spring Boot çalışma zamanı dosyaları
+spring.log

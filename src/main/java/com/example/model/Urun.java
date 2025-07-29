@@ -5,6 +5,17 @@ public class Urun {
     private int id;
     private String ad;
     private double fiyat;
+    
+    public Urun() {}
+    public Urun(String ad, double fiyat) {
+        this.ad = ad;
+        this.fiyat = fiyat;
+    }
+    public Urun(int id, String ad, double fiyat) {
+        this.id = id;
+        this.ad = ad;
+        this.fiyat = fiyat;
+    }
 
     // Getter - Setter
     public int getId() {

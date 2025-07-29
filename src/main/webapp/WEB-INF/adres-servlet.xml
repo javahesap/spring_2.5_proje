@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+                           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- AdresController bean tanımı -->
+    <bean name="/adres.do" class="com.example.controller.AdresController">
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+                <property name="mappings">
+                    <props>
+                        <prop key="listele">listele</prop>
+                        <prop key="ekleForm">ekleForm</prop>
+                        <prop key="kaydet">kaydet</prop>
+                        <prop key="duzenleForm">duzenleForm</prop>
+                        <prop key="guncelle">guncelle</prop>
+                        <prop key="sil">sil</prop>
+                    </props>
+                </property>
+            </bean>
+        </property>
+    </bean>
+
+    <!-- View Resolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/adres/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+</beans>
