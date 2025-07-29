@@ -1,0 +1,33 @@
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
+
+	<display-name>Spring2.5HelloWorld</display-name>
+
+	<!-- Spring Servlet Mapping -->
+	<servlet>
+		<servlet-name>spring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>spring</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+  <servlet-name>urun</servlet-name>
+  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  <load-on-startup>1</load-on-startup>
+</servlet>
+
+<servlet-mapping>
+  <servlet-name>urun</servlet-name>
+  <url-pattern>/urun/*</url-pattern>
+</servlet-mapping>
+
+
+
+
+
+</web-app>
