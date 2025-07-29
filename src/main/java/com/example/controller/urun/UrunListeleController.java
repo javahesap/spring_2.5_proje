@@ -12,7 +12,7 @@ import com.example.model.Urun;
 public class UrunListeleController implements Controller {
 	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) {
 		UrunDao dao = new UrunDao();
-		List<Urun> urunler = dao.urunleriGetir();
+		List<Urun> urunler = dao.listele();
 		return new ModelAndView("urunListesi", "liste", urunler);
 	}
 }
