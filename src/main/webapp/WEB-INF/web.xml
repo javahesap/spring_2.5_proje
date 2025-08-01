@@ -31,6 +31,20 @@
 </servlet-mapping>
 
 
+
+
+
+<filter>
+    <filter-name>characterSanitizeFilter</filter-name>
+    <filter-class>com.example.filter.CharacterSanitizeFilter</filter-class>
+</filter>
+
+<filter-mapping>
+    <filter-name>characterSanitizeFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+
     <!-- Hata Sayfaları -->
     <error-page>
         <error-code>403</error-code>
