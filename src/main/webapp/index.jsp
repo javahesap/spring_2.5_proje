@@ -49,8 +49,8 @@
         <h1>Uygulamamıza Hoş Geldiniz</h1>
         <p>Spring 2.5 tabanlı bu uygulama size harika özellikler sunar.</p>
         <a href="http://localhost:8016/Spring2_5HelloWorld/urun/listele.html" class="btn">Urun Listesi</a>
-          <a href="adres/listeleme.do" class="btn">Başla</a>
-            <a href="adres/listeleme.do" class="btn">Başla</a>
+          <a href="http://localhost:8016/Spring2_5HelloWorld/adres/adreslistele.html" class="btn">Adresler</a>
+            <a href="http://localhost:8016/Spring2_5HelloWorld/urun/urunEkle.html" class="btn">Ürün Ekle</a>
               <a href="adres/listeleme.do" class="btn">Başla</a>
               
     </div>
