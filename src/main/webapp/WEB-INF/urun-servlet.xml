@@ -1,22 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
          http://www.springframework.org/schema/beans
          http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-  <bean name="/listele.html" class="com.example.controller.urun.UrunListeleController" />
-  <bean name="/urunler.html" class="com.example.controller.urun.UrunController" />
-<bean name="/urunEkle.html" class="com.example.controller.urun.UrunController" />
-<bean name="/urunKaydet.html" class="com.example.controller.urun.UrunController" />
-<bean name="/urunDuzenle.html" class="com.example.controller.urun.UrunController" />
-<bean name="/urunGuncelle.html" class="com.example.controller.urun.UrunController" />
-<bean name="/urunSil.html" class="com.example.controller.urun.UrunController" />
-  
+	<bean name="/listele.html"
+		class="com.example.controller.urun.UrunListeleController" />
+	<bean name="/urunler.html"
+		class="com.example.controller.urun.UrunController" />
+	<bean name="/urunEkle.html"
+		class="com.example.controller.urun.UrunController" />
+	<bean name="/urunKaydet.html"
+		class="com.example.controller.urun.UrunController" />
+	<bean name="/urunDuzenle.html"
+		class="com.example.controller.urun.UrunController" />
+	<bean name="/urunGuncelle.html"
+		class="com.example.controller.urun.UrunController" />
+	<bean name="/urunSil.html"
+		class="com.example.controller.urun.UrunController" />
 
-  <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-    <property name="prefix" value="/" />
-    <property name="suffix" value=".jsp" />
-  </bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/views/urun/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
 
 </beans>
