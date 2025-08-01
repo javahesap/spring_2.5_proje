@@ -12,7 +12,7 @@ public class AdresController extends MultiActionController {
 
     private AdresDao adresDao = new AdresDao();
 
-    public ModelAndView listele(HttpServletRequest req, HttpServletResponse res) {
+    public ModelAndView adreslistele(HttpServletRequest req, HttpServletResponse res) {
         List<Adres> liste = adresDao.listele();
         return new ModelAndView("adresListesi", "liste", liste);
     }

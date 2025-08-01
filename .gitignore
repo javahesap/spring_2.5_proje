@@ -3,6 +3,8 @@
 *.war
 *.jar
 *.log
+*.settings
+*.classpath
 
 # Derleyici çıktısı klasörleri
 /target/

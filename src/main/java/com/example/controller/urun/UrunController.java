@@ -16,7 +16,11 @@ public class UrunController implements Controller {
     private UrunDao urunDao = new UrunDao();
 
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        String path = request.getServletPath();
+    	
+    	String contextPath = request.getContextPath(); // /Spring2_5HelloWorld
+    	String fullPath = request.getRequestURI();     // /Spring2_5HelloWorld/urun/urunler.html
+    	String path = fullPath.substring(contextPath.length() + "/urun".length());
+    	
 
         if (path.equals("/urunler.html")) {
             List<Urun> liste = urunDao.listele();
