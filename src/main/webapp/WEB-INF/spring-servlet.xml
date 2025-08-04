@@ -13,7 +13,7 @@
   <bean name="/login.html" class="com.example.controller.LoginController" />
    <bean name="/home.html" class="com.example.controller.HelloController" />
   
-  
+  <bean class="util.BeanListLogger"/>
 
   <!-- View Resolver -->
   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

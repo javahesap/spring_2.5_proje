@@ -1,19 +1,23 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
-	<bean name="/stok.html" class="com.example.controller.StokController">
-		<property name="methodNameResolver">
-			<bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver"/>
-		</property>
-	</bean>
+    <bean id="stokDao" class="com.example.dao.StokDao"/>
 
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/stok/" />
-		<property name="suffix" value=".jsp" />
-	</bean>
+    <bean name="/stok.html" class="com.example.controller.StokController">
+        <property name="stokDao" ref="stokDao"/>
+        <property name="methodNameResolver">
+            <bean class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver"/>
+        </property>
+    </bean>
+
+    <bean class="util.BeanListLogger"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/stok/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
 
 </beans>
