@@ -4,8 +4,10 @@
            http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
+    <!-- DAO -->
     <bean id="stokDao" class="com.example.dao.StokDao"/>
 
+    <!-- Controller -->
     <bean name="/stok.html" class="com.example.controller.StokController">
         <property name="stokDao" ref="stokDao"/>
         <property name="methodNameResolver">
@@ -13,11 +15,9 @@
         </property>
     </bean>
 
-    <bean class="util.BeanListLogger"/>
-
+    <!-- View Resolver -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/stok/" />
         <property name="suffix" value=".jsp" />
     </bean>
-
 </beans>
