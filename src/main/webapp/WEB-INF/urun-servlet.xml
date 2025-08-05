@@ -20,7 +20,7 @@
 	<bean name="/urunSil.html"
 		class="com.example.controller.urun.UrunController" />
 
-
+<bean class="util.BeanListLogger"/>
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/urun/" />

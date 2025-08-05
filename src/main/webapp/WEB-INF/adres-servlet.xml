@@ -20,7 +20,7 @@
         </property>
     </bean>
     
-    
+    <bean class="util.BeanListLogger"/>
     
     <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

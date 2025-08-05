@@ -9,7 +9,7 @@ public class FolderStructurePrinter {
 
     // 🚫 Hariç tutulacak klasör isimleri
     private static final Set<String> IGNORE_FOLDERS = new HashSet<>(Arrays.asList(
-            ".git", "hooks", "objects", ".settings", "target", ".idea","build"
+            ".git", "hooks", "objects", ".settings", "target", ".idea","build",".classpath",".github",".gitignore",".project"
     ));
 
     public static void main(String[] args) {

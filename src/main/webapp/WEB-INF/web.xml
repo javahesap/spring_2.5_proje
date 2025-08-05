@@ -1,34 +1,86 @@
 <web-app xmlns="http://java.sun.com/xml/ns/j2ee" version="2.4">
 
-    <display-name>Spring2.5HelloWorld</display-name>
+	<display-name>Spring2.5HelloWorld</display-name>
 
-    <!-- Ürün servlet -->
-    <servlet>
-        <servlet-name>urun</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
+	<!-- Ürün servlet -->
+	<servlet>
+		<servlet-name>urun</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
 
-    <servlet-mapping>
-        <servlet-name>urun</servlet-name>
-        <url-pattern>/urun/*</url-pattern>
-    </servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>urun</servlet-name>
+		<url-pattern>/urun/*</url-pattern>
+	</servlet-mapping>
 
-    <!-- Adres servlet -->
-   <servlet>
-    <servlet-name>adres</servlet-name>
+	<!-- Adres servlet -->
+	<servlet>
+		<servlet-name>adres</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/adres-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>adres</servlet-name>
+		<url-pattern>/adres/*</url-pattern>
+	</servlet-mapping>
+
+<servlet>
+    <servlet-name>stok</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/adres-servlet.xml</param-value>
+        <param-value>/WEB-INF/stok-servlet.xml</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
 </servlet>
 
 <servlet-mapping>
-    <servlet-name>adres</servlet-name>
-    <url-pattern>/adres/*</url-pattern>
+    <servlet-name>stok</servlet-name>
+    <url-pattern>/stok.html</url-pattern>
 </servlet-mapping>
+
+
+<servlet>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.example.controller.UserController</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/user/*</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+		<servlet-name>gen</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>
+	
+				/WEB-INF/gen-servlet.xml
+			</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>gen</servlet-name>
+		<url-pattern>/gen/*</url-pattern>
+	</servlet-mapping>
+
+
+
 
 
 
@@ -45,24 +97,25 @@
 </filter-mapping>
 
 
-    <!-- Hata Sayfaları -->
-    <error-page>
-        <error-code>403</error-code>
-        <location>/security/403.html</location>
-    </error-page>
 
-    <error-page>
-        <error-code>404</error-code>
-        <location>/security/404.html</location>
-    </error-page>
+	<!-- Hata Sayfaları -->
+	<error-page>
+		<error-code>403</error-code>
+		<location>/security/403.html</location>
+	</error-page>
 
-    <error-page>
-        <error-code>500</error-code>
-        <location>/security/500.html</location>
-    </error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/security/404.html</location>
+	</error-page>
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/security/500.html</location>
+	</error-page>
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
 
 </web-app>

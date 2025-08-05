@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/*.htm">genController</prop>
+				<prop key="/*.htx">genController</prop>
+				<prop key="/*.xml">genController</prop>
+				<prop key="/*.json">genController</prop>
+				<prop key="/*.txt">genController</prop>
+				<prop key="/*.ajax">genController</prop>
+				<prop key="/*.do">genController</prop>
+
+
+
+
+			</props>
+		</property>
+	</bean>
+
+	<bean name="genController"
+		class="com.example.controller.GenController">
+		<property name="methodNameResolver">
+			<ref local="genControllerResolver" />
+		</property>
+
+	</bean>
+
+	<bean id="genControllerResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+
+				<prop key="/urun.htm">hndurun</prop>
+				<prop key="/deneme.htm">hnddeneme</prop>
+
+
+
+
+			</props>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/WEB-INF/views/gen/</value>
+
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>
+
+
+</beans>
