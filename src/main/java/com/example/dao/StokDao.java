@@ -2,6 +2,8 @@ package com.example.dao;
 import com.example.model.Stok;
 import java.sql.*;
 import java.util.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
 
 public class StokDao extends BaseDao {
 

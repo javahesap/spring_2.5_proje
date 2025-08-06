@@ -5,6 +5,7 @@ package com.example.dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+
 public abstract class BaseDao {
     private final String jdbcURL = "jdbc:mysql://localhost:3306/userdb";
     private final String jdbcUsername = "root";
