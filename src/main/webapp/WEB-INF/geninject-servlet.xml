@@ -3,62 +3,44 @@
     "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-	<bean id="urlMapping"
-		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property name="mappings">
-			<props>
-				<prop key="/*.htm">geninjectController</prop>
-				<prop key="/*.htx">geninjectController</prop>
-				<prop key="/*.xml">geninjectController</prop>
-				<prop key="/*.json">geninjectController</prop>
-				<prop key="/*.txt">geninjectController</prop>
-				<prop key="/*.ajax">geninjectController</prop>
-				<prop key="/*.do">geninjectController</prop>
 
+    <!-- URL Mapping -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/*.htm">geninjectController</prop>
+                <prop key="/*.htx">geninjectController</prop>
+                <prop key="/*.xml">geninjectController</prop>
+                <prop key="/*.json">geninjectController</prop>
+                <prop key="/*.txt">geninjectController</prop>
+                <prop key="/*.ajax">geninjectController</prop>
+                <prop key="/*.do">geninjectController</prop>
+            </props>
+        </property>
+    </bean>
 
+    <!-- Method Name Resolver -->
+    <bean id="geninjControllerResolver"
+        class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+        <property name="mappings">
+            <props>
+                <prop key="/uruninj.htm">hnduruninj</prop>
+                <prop key="/denemeinj.htm">hnddenemeinj</prop>
+                <prop key="/usersinj.htm">hndusersinj</prop>
+            </props>
+        </property>
+    </bean>
 
+    <!-- Controller -->
+    <bean name="geninjectController" class="com.example.controller.GeninjectController">
+        <property name="methodNameResolver" ref="geninjControllerResolver"/>
+        <property name="userDao" ref="userDao"/>
+    </bean>
 
-			</props>
-		</property>
-	</bean>
-
-	<bean name="geninjectController"
-		class="com.example.controller.GeninjectController">
-		<property name="methodNameResolver">
-			<ref local="genControllerResolver" />
-		</property>
-
-	</bean>
-
-	<bean id="genControllerResolver"
-		class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
-		<property name="mappings">
-			<props>
-
-				<prop key="/uruninj.htm">hnduruninj</prop>
-				<prop key="/denemeinj.htm">hnddenemeinj</prop>
-			     <prop key="/usersinj.htm">hndusersinj</prop>
-
-
-
-
-			</props>
-		</property>
-	</bean>
-
-	<bean id="viewResolver"
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="viewClass">
-			<value>org.springframework.web.servlet.view.JstlView</value>
-		</property>
-		<property name="prefix">
-			<value>/WEB-INF/views/gen/</value>
-
-		</property>
-		<property name="suffix">
-			<value>.jsp</value>
-		</property>
-	</bean>
-
-
+    <!-- View Resolver -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/views/gen/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
 </beans>
