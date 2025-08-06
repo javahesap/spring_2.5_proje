@@ -15,10 +15,16 @@
     <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <property name="dataSource" ref="dataSource" />
     </bean>
+    
+    
 
     <!-- DAO -->
     <bean id="userDao" class="com.example.dao.UserDao">
         <property name="dataSource" ref="dataSource"/>
     </bean>
+
+
+    <!-- <bean name="/gen.html" class="com.example.controller.GeninjectController" />-->
+
 
 </beans>
